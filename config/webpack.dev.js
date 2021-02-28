@@ -1,27 +1,13 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const webpack = require('webpack');
 
-function buildConfig(configDirs) {
+module.exports = configDirs => {
     return {
-        entry: configDirs.APP_DIR + '/index.js',        
-        output: {
-            path: configDirs.BUILD_DIR,
-            filename: 'bundle.js',
-            publicPath: '/'
-        },
         mode: 'development',
         devServer: {
             contentBase: configDirs.BUILD_DIR,
             compress: false,
             port: 3000,
             historyApiFallback: true
-        },
-        resolve: {
-            alias: {
-                components: configDirs.APP_DIR + '/components/'
-            },
-            extensions: ['.js', '.jsx']
         },
         module: {
             rules: [
@@ -64,18 +50,6 @@ function buildConfig(configDirs) {
                 }
             ]
         },
-        devtool: false,
-        plugins: [
-            new HtmlWebpackPlugin({
-                template: configDirs.APP_DIR + '/index.html'
-            }),
-            new webpack.SourceMapDevToolPlugin({            
-                filename: 'index.js.map',
-                exclude: ['vendor.js']
-            }),
-            new MiniCssExtractPlugin()
-        ]
-    };
-};
-
-module.exports = buildConfig;
+        devtool: 'source-map'
+    }
+}

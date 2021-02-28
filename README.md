@@ -14,9 +14,10 @@ npm install
 ## Usage
 
 ```bash
-npm run dev
-npm run build
+npm run build:prod
+npm run build:dev
 npm run serve
+npm run test
 ```
 
 ## License
