@@ -1,0 +1,32 @@
+.header {
+    background: #232323 url("./bg.jpg") no-repeat 0 0;
+    background-size: cover;
+    padding: 20px 0;
+}
+
+.logo {
+    color: #f65261;
+    font-size: 24px;
+    line-height: 1;
+}
+
+.logo:hover {
+    color: #f65261;
+    text-decoration: none;
+}
+
+.addMoreBtn {
+    background-color: rgba(255,255,255,0.3);
+    color: #f65261;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 15px 10px 10px;
+    text-transform: uppercase;
+}
+
+.addMoreBtn:hover,
+.addMoreBtn:focus,
+.addMoreBtn:active {
+    outline: none;
+    background-color: rgba(255,255,255,0.4);
+}

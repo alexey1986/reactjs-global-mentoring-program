@@ -1,0 +1,13 @@
+body {
+    background-color: #232323;
+    color: #ffffff
+}
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+    background-color: #f65261;
+    border-color: #f65261;
+    text-transform: uppercase;
+}
