@@ -1,0 +1,15 @@
+.genres {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.genres li {
+    padding: 10px;
+}
+
+.genres li a {
+    color: #fff;
+    text-transform: uppercase;
+}

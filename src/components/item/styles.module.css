@@ -1,0 +1,21 @@
+.serialWrapper {
+    padding: 15px 0;
+}
+
+.serialWrapper a {
+    display: block;
+    color: inherit;
+    position: relative;
+    height: 100%;
+}
+
+.serialWrapper a:hover {
+    text-decoration: none;
+}
+
+.serialPoster {
+    position: relative;
+    margin: -1px;
+    width: calc(100% + 2px);
+    max-width: calc(100% + 2px);
+}
