@@ -5,8 +5,8 @@ import styles from './styles.module.css';
 const Genres = (props) => {
     return (
         <ul className={styles.genres}>
-            {props.genres.map((item) => (
-                <li key={item}>
+            {props.genres.map((item, index) => (
+                <li key={`genre-${index}`}>
                     <a href="#">{item}</a>
                 </li>
             ))}

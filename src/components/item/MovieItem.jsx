@@ -1,23 +1,20 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
+import MovieInfo from 'components/info';
+import Link from 'components/link';
 import Col from 'react-bootstrap/Col';
 import styles from './styles.module.css';
 
 const MovieItem = (props) => {
-    const { id, title, genres, poster_path, release_date } = props.movie;
-    const year = new Date(release_date).getFullYear();
-    const genre = genres.join(', ');
+    const { title, poster_path } = props.movie;
+    const { serialWrapper, serialPoster } = styles;
 
     return (
-        <Col md={4} className={styles.serialWrapper}>
-            <a href="#">
-                <img className={styles.serialPoster} src={poster_path} alt={title} />
-                <div className={styles.serialMeta}>
-                    <span className={styles.serialTitle}>{title}</span>
-                    <span className={styles.serialGenre}>{genre}</span>
-                    <span className={styles.serialYear}>{year}</span>
-                </div>
-            </a>
+        <Col md={4} className={serialWrapper}>
+            <Link target="#">
+                <img className={serialPoster} src={poster_path} alt={title} />
+                <MovieInfo meta={props.movie} />
+            </Link>
         </Col>
     )
 }

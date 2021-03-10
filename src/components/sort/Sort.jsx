@@ -5,11 +5,13 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 const Sort = (props) => {
+    const sortByTxt = 'Sort by';
+
     return (
         <Form className="pull-right">
             <Form.Group as={Row} controlId="formHorizontalEmail">
                 <Form.Label column sm={4}>
-                    Sort by
+                    {sortByTxt}
                 </Form.Label>
                 <Col sm={8}>
                     <Form.Control as="select" custom>
