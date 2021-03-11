@@ -125,3 +125,30 @@ export const options = [
     'Average',
     'Revenue'
 ]
+
+export const labels = {
+    editMovie: 'Edit Movie: ',
+    titleLabel: 'Title',
+    releaseDateLabel: 'Release Date',
+    selectDateLabel: 'Select Date',
+    movieUrlLabel: 'Movie Url',
+    genreLabel: 'Genre',
+    selectGenreLabel: 'Select Genre',
+    overviewLabel: 'Overview',
+    runtimeLabel: 'Runtime',
+    hereLabel: 'here'
+}
+
+export const text = {
+    editTxt: 'Edit',
+    deleteTxt: 'Delete',
+    addMoreTxt: '+ Add More',
+    sureTxt: 'Are you sure you want to delete this movie?',
+    resetTxt: 'Reset',
+    submitTxt: 'Submit',
+    saveTxt: 'Save',
+    confirmTxt: 'Confirm',
+    addMovieTxt: 'ADD MOVIE',
+    editMovieTxt: 'EDIT MOVIE: ',
+    deleteMovieTxt: 'DELETE MOVIE'
+}

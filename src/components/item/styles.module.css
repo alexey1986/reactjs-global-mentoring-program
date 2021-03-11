@@ -2,14 +2,14 @@
     padding: 15px 0;
 }
 
-.serialWrapper a {
+.itemLink {
     display: block;
     color: inherit;
     position: relative;
     height: 100%;
 }
 
-.serialWrapper a:hover {
+.itemLink:hover {
     text-decoration: none;
 }
 

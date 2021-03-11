@@ -1,15 +1,14 @@
 import React from 'react';
 import parse from 'html-react-parser';
 import Search from 'components/search';
+import AddBtn from 'components/AddBtn';
 import Link from 'components/link';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
 import styles from './styles.module.css';
 
 const Header = () => {
-    const addMoreTxt = '+ Add More';
     const logoTxt = '<strong>netflix</strong>roulette';
 
     return (
@@ -22,9 +21,7 @@ const Header = () => {
                         </Link>
                     </Col>
                     <Col className="text-right">
-                        <Button variant="outline-secondary" type="button">
-                            {addMoreTxt}
-                        </Button>
+                        <AddBtn />
                     </Col>
                 </Row>
                 <Search />

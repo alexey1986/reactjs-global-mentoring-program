@@ -10,7 +10,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import styles from './styles.module.css';
-import { genres, options, movies } from './data.js';
+import { genres, options, movies } from '../../data.js';
 
 const App = () => {
     return (

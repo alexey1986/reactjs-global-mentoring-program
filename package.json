@@ -6,7 +6,7 @@
   "scripts": {
     "build:prod": "webpack --env=prod",
     "build:dev": "webpack --env=dev",
-    "serve": "webpack-dev-server --env=dev --open --hot",
+    "start": "webpack-dev-server --env=dev --open --hot",
     "test": "jest"
   },
   "jest": {
