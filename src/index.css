@@ -11,3 +11,51 @@ body {
     border-color: #f65261;
     text-transform: uppercase;
 }
+
+.modal-content {
+    background-color: #232323;
+}
+
+.modal-header,
+.modal-footer {
+    border: none;
+}
+
+.modal-title {
+    font-weight: 300;
+    font-size: 30px;
+}
+
+.btn-close,
+.btn-close:hover {
+    color: white;
+}
+
+.btn-dropdown {
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    background: #424242;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close,
+.close:hover {
+    color: white;
+    text-shadow: none;
+}
+
+.form-control,
+.form-control:focus {
+    background-color: #424242;
+    border-color: #424242;
+    color: white;
+}
+
+.form-label {
+    color: #f65261;
+    text-transform: uppercase;
+}

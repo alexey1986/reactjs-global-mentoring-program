@@ -16,7 +16,7 @@ npm install
 ```bash
 npm run build:prod
 npm run build:dev
-npm run serve
+npm run start
 npm run test
 ```
 
