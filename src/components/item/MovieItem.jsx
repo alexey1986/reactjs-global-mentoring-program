@@ -46,11 +46,11 @@ class MovieItem extends React.Component {
                     </Link>
                 </Col>
 
-                <ModalDialog type='edit' state={showModalEdit} clickHandler={this.handleModalEdit}>
+                <ModalDialog type='edit' visible={showModalEdit} clickHandler={this.handleModalEdit}>
                     <EditMovie data={movie} />
                 </ModalDialog>
 
-                <ModalDialog type='delete' state={showModalDelete} clickHandler={this.handleModalDelete}>
+                <ModalDialog type='delete' visible={showModalDelete} clickHandler={this.handleModalDelete}>
                     <DeleteMovie />
                 </ModalDialog>
             </>

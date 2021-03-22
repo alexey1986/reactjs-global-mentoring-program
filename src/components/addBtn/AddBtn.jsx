@@ -25,7 +25,7 @@ class AddBtn extends React.Component {
                     {text.addMoreTxt}
                 </Button>
 
-                <ModalDialog type='add' state={this.state.showModalAdd} clickHandler={this.handleModalAdd}>
+                <ModalDialog type='add' visible={this.state.showModalAdd} clickHandler={this.handleModalAdd}>
                     <AddMovie />
                 </ModalDialog>
             </>
