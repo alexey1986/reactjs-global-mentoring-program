@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-const Sort = (props) => {
+const Sort = ({options}) => {
     const sortByTxt = 'Sort by';
 
     return (
@@ -15,7 +15,7 @@ const Sort = (props) => {
                 </Form.Label>
                 <Col sm={8}>
                     <Form.Control as="select" custom>
-                        {props.options.map((item) => (
+                        {options.map((item) => (
                             <option key={item}>
                                 {item}
                             </option>

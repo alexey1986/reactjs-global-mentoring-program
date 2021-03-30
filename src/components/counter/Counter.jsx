@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Counter = (props) => {
+const Counter = ({count}) => {
     return (
-        <div>{props.count} movies found</div>
+        <div>{count} movies found</div>
     )
 }
 

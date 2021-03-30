@@ -3,8 +3,7 @@ import Button from 'react-bootstrap/Button'
 import styles from './styles.module.css';
 import { text } from '../../data.js';
 
-const DropdownMenu = (props) => {
-    const { visible, handleToggle, handleEdit, handleDelete } = props;
+const DropdownMenu = ({ visible, handleToggle, handleEdit, handleDelete }) => {
     const { editTxt, deleteTxt } = text;
 
     return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 
-const Link = (props) => (<a className={props.className} href={props.target}>{props.children}</a>);
+const Link = ({className, target, children}) => (<a className={className} href={target}>{children}</a>);
 
 Link.propTypes = {
     className: PropTypes.string,
