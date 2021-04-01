@@ -8,12 +8,12 @@ const DropdownMenu = ({ visible, handleToggle, handleEdit, handleDelete }) => {
 
     return (
         <div className={`${styles.dropdownMenu} ${visible ? `${styles.hidden}` : null}`}>
-            <Button className={styles.close} as="span" variant="close" onClick={handleToggle}>x</Button>
+            <Button className={styles.close} as="span" variant="close" onClick={(e) => handleToggle(e)}>x</Button>
             <ul>
-                <li onClick={handleEdit}>
+                <li onClick={(e) => handleEdit(e)}>
                     {editTxt}
                 </li>
-                <li onClick={handleDelete}>
+                <li onClick={(e) => handleDelete(e)}>
                     {deleteTxt}
                 </li>
             </ul>

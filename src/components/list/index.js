@@ -1,5 +1,3 @@
-import MoviesListControl from './MoviesList.jsx';
-
-const MoviesList = MoviesListControl;
+import MoviesList from './MoviesList.jsx';
 
 export default MoviesList;

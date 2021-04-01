@@ -1,14 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 
-const Counter = ({count}) => {
-    return (
-        <div>{count} movies found</div>
-    )
+const Counter = () => {
+    const count = useSelector(state => state.fetchReducer.totalAmount);
+    const isLoading = useSelector(state => state.fetchReducer.isLoading);
+
+    if (!isLoading && count) {
+        return <div>{count} movies found</div>
+    } else if (!isLoading) {
+        return <div>No movies found</div>
+    } 
+    
+    return null;
 }
-
-Counter.propTypes = {
-    count: PropTypes.number
-};
 
 export default Counter;

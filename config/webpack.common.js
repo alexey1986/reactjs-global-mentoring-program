@@ -8,7 +8,12 @@ module.exports = configDirs => {
         resolve: {
             alias: {
                 src: configDirs.APP_DIR,
-                components: configDirs.APP_DIR + '/components/'
+                components: configDirs.APP_DIR + '/components/',
+                reducers: configDirs.APP_DIR + '/reducers/',
+                actionTypes: configDirs.APP_DIR + '/actionTypes/',
+                actions: configDirs.APP_DIR + '/actions/',
+                service: configDirs.APP_DIR + '/service/',
+                api:  configDirs.APP_DIR + '/api/'
             },
             extensions: ['.js', '.jsx']
         },
@@ -25,7 +30,9 @@ module.exports = configDirs => {
         output: {
             path: configDirs.BUILD_DIR,
             filename: 'bundle.compiled.js',
+            sourceMapFilename: "bundle.compiled.js.map",
             publicPath: ''
-        }
+        },
+        devtool: "source-map"
     }
 };

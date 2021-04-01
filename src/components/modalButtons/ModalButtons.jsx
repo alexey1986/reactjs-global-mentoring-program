@@ -3,7 +3,7 @@ import { PropTypes } from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import { text } from '../../data.js';
 
-const ModalButtons = ({ clickHandler, type }) => {
+const ModalButtons = ({ handleAdd, handleEdit, handleDelete, type }) => {
     const { resetTxt, submitTxt, saveTxt, confirmTxt } = text;
 
     return (
@@ -11,29 +11,33 @@ const ModalButtons = ({ clickHandler, type }) => {
             {(() => {
                 switch (type) {
                     case "add":
+                        return null;
+                        // TODO temporary remove buttons
                         return (
                             <>
-                                <Button variant="secondary" onClick={clickHandler}>
+                                <Button variant="secondary" type="reset">
                                     {resetTxt}
                                 </Button>
-                                <Button variant="primary" onClick={clickHandler}>
+                                <Button variant="primary" type="submit" onClick={handleAdd}>
                                     {submitTxt}
                                 </Button>
                             </>
                         );
                     case "edit":
+                        return null;
+                        // TODO temporary remove buttons
                         return (
                             <>
-                                <Button variant="secondary" onClick={clickHandler}>
+                                <Button variant="secondary" type="reset">
                                     {resetTxt}
                                 </Button>
-                                <Button variant="primary" onClick={clickHandler}>
+                                <Button variant="primary" type="submit" onClick={handleEdit}>
                                     {saveTxt}
                                 </Button>
                             </>
                         );
                     case "delete":
-                        return <Button variant="primary" onClick={clickHandler}>{confirmTxt}</Button>
+                        return <Button variant="primary" onClick={handleDelete}>{confirmTxt}</Button>
                     default: return "add";
                 }
             }
@@ -44,7 +48,8 @@ const ModalButtons = ({ clickHandler, type }) => {
 
 ModalButtons.propTypes = {
     type: PropTypes.string,
-    clickHandler: PropTypes.func
+    clickHandler: PropTypes.func,
+    handleDelete: PropTypes.func
 };
 
 export default ModalButtons;

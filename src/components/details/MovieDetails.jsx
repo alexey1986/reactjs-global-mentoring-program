@@ -26,7 +26,7 @@ const MovieDetails = ({ selectedMovie }) => {
             <Col sm={9}>
                 <div className={styles.flexbox}>
                     <h1>{title}</h1>
-                    <span className={styles.rating}>{vote_count}</span>
+                    {vote_count && <span className={styles.rating}>{vote_count}</span>}
                 </div>
                 <p>{tagline}</p>
                 <p>{genres && arrayToString(genres)}</p>

@@ -1,37 +1,19 @@
 import React from 'react';
-import ModalDialog from 'components/modal';
-import AddMovie from 'components/AddMovie';
 import Button from 'react-bootstrap/Button';
 import { text } from '../../data.js';
+import { useDispatch } from 'react-redux';
+import { toggleCreationForm } from 'actions/actions';
 
-class AddBtn extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            showModalAdd: false
-        };
-    }
-    
-    handleModalAdd = () => {
-        this.setState({
-            showModalAdd: !this.state.showModalAdd
-        });
-    }
+const AddBtn = () => {
+    const dispatch = useDispatch();
 
-    render() {
-        return (
-            <>
-                <Button variant="outline-secondary" type="button" onClick={this.handleModalAdd}>
-                    {text.addMoreTxt}
-                </Button>
-
-                <ModalDialog type='add' visible={this.state.showModalAdd} clickHandler={this.handleModalAdd}>
-                    <AddMovie />
-                </ModalDialog>
-            </>
-        )
-    }
-
+    return (
+        <>
+            <Button variant="outline-secondary" type="button" onClick={() => dispatch(toggleCreationForm())}>
+                {text.addMoreTxt}
+            </Button>
+        </>
+    )
 }
 
 export default AddBtn;
