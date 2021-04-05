@@ -15,7 +15,7 @@ export const movies = [
             "Adventure",
             "Science Fiction"
         ],
-        "runtime": null
+        "runtime": 150
     },
     {
         "id": 424785,
@@ -33,7 +33,7 @@ export const movies = [
             "Action",
             "Adventure"
         ],
-        "runtime": null
+        "runtime": 130
     },
     {
         "id": 299534,
@@ -51,7 +51,7 @@ export const movies = [
             "Adventure",
             "Science Fiction"
         ],
-        "runtime": null
+        "runtime": 90
     },
     {
         "id": 287947,
@@ -70,7 +70,7 @@ export const movies = [
             "Fantasy",
             "Science Fiction"
         ],
-        "runtime": null
+        "runtime": 90
     },
     {
         "id": 320288,
@@ -87,7 +87,7 @@ export const movies = [
             "Action",
             "Science Fiction"
         ],
-        "runtime": null
+        "runtime": 90
     },
     {
         "id": 181790,

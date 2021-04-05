@@ -7,6 +7,7 @@ module.exports = configDirs => {
         entry: configDirs.APP_DIR + '/index.js',
         resolve: {
             alias: {
+                src: configDirs.APP_DIR,
                 components: configDirs.APP_DIR + '/components/'
             },
             extensions: ['.js', '.jsx']

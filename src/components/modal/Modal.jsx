@@ -4,8 +4,7 @@ import ModalButtons from 'components/modalButtons';
 import Modal from 'react-bootstrap/Modal';
 import { text } from '../../data.js';
 
-const ModalDialog = (props) => {
-    const { type, visible, clickHandler, children } = props;
+const ModalDialog = ({ type, visible, clickHandler, children }) => {
     const { addMovieTxt, editMovieTxt, deleteMovieTxt } = text;
 
     return (

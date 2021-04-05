@@ -18,12 +18,10 @@ class Dropdown extends React.Component {
     }
 
     render() {
-        const { handleEdit, handleDelete } = this.props;
-
         return (
             <div className={styles.dropdownToggle}>
                 <Button className={styles.dropdownBtn} as="a" variant="dropdown" onClick={this.handleToggleDropdown.bind(this)}>...</Button>
-                <DropdownMenu visible={this.state.hideDropdown} handleToggle={this.handleToggleDropdown.bind(this)} handleEdit={handleEdit} handleDelete={handleDelete} />
+                <DropdownMenu visible={this.state.hideDropdown} handleToggle={this.handleToggleDropdown.bind(this)} {...this.props} />
             </div>
         )
     }

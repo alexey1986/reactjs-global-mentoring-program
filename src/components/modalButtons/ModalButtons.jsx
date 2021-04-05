@@ -3,8 +3,7 @@ import { PropTypes } from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import { text } from '../../data.js';
 
-const ModalButtons = (props) => {
-    const { clickHandler, type } = props;
+const ModalButtons = ({ clickHandler, type }) => {
     const { resetTxt, submitTxt, saveTxt, confirmTxt } = text;
 
     return (

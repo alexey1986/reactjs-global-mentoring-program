@@ -31,14 +31,14 @@ class MovieItem extends React.Component {
     }
 
     render() {
-        const { movie } = this.props;
+        const { movie, handleClick } = this.props;
         const { title, poster_path } = movie;
         const { serialWrapper, serialPoster } = styles;
         const { showModalEdit, showModalDelete } = this.state;
 
         return (
             <>
-                <Col md={4} className={serialWrapper}>
+                <Col md={4} className={serialWrapper} onClick={() => handleClick(movie)}>
                     <Dropdown handleEdit={this.handleModalEdit} handleDelete={this.handleModalDelete} />
                     <Link className={styles.itemLink} target="#">
                         <img className={serialPoster} src={poster_path} alt={title} />

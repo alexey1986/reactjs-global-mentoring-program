@@ -1,0 +1,49 @@
+.movieDetails {
+    margin-top: 30px;
+    padding: 20px 0;
+}
+
+.genre {
+    background-color: #f3f3f3;
+    margin: 20px 0 5px;
+    padding: 15px;
+}
+
+.movieDescription {
+    padding-top: 63px;
+}
+
+.flexbox {
+    display: flex;
+    align-items: center;
+}
+
+.rating {
+    margin-left: 20px;
+    border: 1px solid #1e7e34;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    flex-shrink: 0;
+}
+
+.year, .runtime {
+    color: #f65261;
+    font-size: 24px;
+    margin-right: 50px;
+}
+
+.logo {
+    color: #f65261;
+    font-size: 24px;
+    line-height: 1;
+}
+
+.logo:hover {
+    color: #f65261;
+    text-decoration: none;
+}
