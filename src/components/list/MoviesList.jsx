@@ -1,20 +1,27 @@
 import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
+import { useDispatch, useSelector } from 'react-redux';
+import { getMoviesList } from 'service/index.js';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import MovieItem from 'components/item';
 import styles from './styles.module.css';
 
-const MoviesListControl = ({ movies, setMovie }) => {
+const MoviesList = () => {
+    const movies = useSelector(state => state.fetchReducer.movies);
+    const params = useSelector(state => state.fetchReducer.parameters);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        getMoviesList(dispatch, params);
+    }, []);
+
     return (
         <div className={styles.moviesList}>
             <Container>
                 <Row>
                     {
-                        !movies.length ?
-                        <p>Loading movies...</p> :
                         movies.map(item => (
-                            <MovieItem key={item.id} movie={item} handleClick={setMovie}></MovieItem>
+                            <MovieItem key={item.id} movie={item} />
                         ))
                     }
                 </Row>
@@ -23,8 +30,4 @@ const MoviesListControl = ({ movies, setMovie }) => {
     )
 }
 
-MoviesListControl.propTypes = {
-    movies: PropTypes.array
-};
-
-export default MoviesListControl;
+export default MoviesList;

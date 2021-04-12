@@ -1,30 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import DropdownMenu from 'components/dropdownMenu';
 import Button from 'react-bootstrap/Button'
 import styles from './styles.module.css';
 
-class Dropdown extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            hideDropdown: true
-        };
+const Dropdown = (props) => {
+    const [hideDropdown, setHideDropdown] = useState(true);
+
+    const handleToggleDropdown = (e) => {
+        e.stopPropagation();
+        setHideDropdown(!hideDropdown);
     }
 
-    handleToggleDropdown() {
-        this.setState({
-            hideDropdown: !this.state.hideDropdown
-        });
-    }
-
-    render() {
-        return (
-            <div className={styles.dropdownToggle}>
-                <Button className={styles.dropdownBtn} as="a" variant="dropdown" onClick={this.handleToggleDropdown.bind(this)}>...</Button>
-                <DropdownMenu visible={this.state.hideDropdown} handleToggle={this.handleToggleDropdown.bind(this)} {...this.props} />
-            </div>
-        )
-    }
+    return (
+        <div className={styles.dropdownToggle}>
+            <Button className={styles.dropdownBtn} as="a" variant="dropdown" onClick={(e) => handleToggleDropdown(e)}>...</Button>
+            <DropdownMenu visible={hideDropdown} handleToggle={handleToggleDropdown} {...props} />
+        </div>
+    )
 }
 
 export default Dropdown;

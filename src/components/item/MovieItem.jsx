@@ -1,61 +1,41 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { getMovie } from 'service/index.js';
+import { toggleEditForm, toggleDeleteModal } from 'actions/actions';
 import Dropdown from 'components/dropdown';
 import MovieInfo from 'components/info';
-import ModalDialog from 'components/modal';
-import EditMovie from 'components/editMovie';
-import DeleteMovie from 'components/deleteMovie';
 import Link from 'components/link';
 import Col from 'react-bootstrap/Col';
 import styles from './styles.module.css';
 
-class MovieItem extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            showModalEdit: false,
-            showModalDelete: false
-        };
+const MovieItem = ({ movie }) => {
+    const { title, poster_path } = movie;
+    const { serialWrapper, serialPoster } = styles;
+
+    const dispatch = useDispatch();
+    
+    const showModalEdit = (e) => {
+        e.stopPropagation();
+        dispatch(toggleEditForm(movie));
     }
 
-    handleModalEdit = () => {
-        this.setState({
-            showModalEdit: !this.state.showModalEdit
-        });
+    const showModalDelete = (e) => {
+        e.stopPropagation();
+        dispatch(toggleDeleteModal(movie.id));
     }
 
-    handleModalDelete = () => {
-        this.setState({
-            showModalDelete: !this.state.showModalDelete
-        });
-    }
-
-    render() {
-        const { movie, handleClick } = this.props;
-        const { title, poster_path } = movie;
-        const { serialWrapper, serialPoster } = styles;
-        const { showModalEdit, showModalDelete } = this.state;
-
-        return (
-            <>
-                <Col md={4} className={serialWrapper} onClick={() => handleClick(movie)}>
-                    <Dropdown handleEdit={this.handleModalEdit} handleDelete={this.handleModalDelete} />
-                    <Link className={styles.itemLink} target="#">
-                        <img className={serialPoster} src={poster_path} alt={title} />
-                        <MovieInfo meta={movie} />
-                    </Link>
-                </Col>
-
-                <ModalDialog type='edit' visible={showModalEdit} clickHandler={this.handleModalEdit}>
-                    <EditMovie data={movie} />
-                </ModalDialog>
-
-                <ModalDialog type='delete' visible={showModalDelete} clickHandler={this.handleModalDelete}>
-                    <DeleteMovie />
-                </ModalDialog>
-            </>
-        )
-    }
+    return (
+        <>
+            <Col md={4} className={serialWrapper} onClick={() => getMovie(dispatch, movie.id)}>
+                <Dropdown handleEdit={showModalEdit} handleDelete={showModalDelete} />
+                <Link className={styles.itemLink} target="#">
+                    <img className={serialPoster} src={poster_path} alt={title} />
+                    <MovieInfo meta={movie} />
+                </Link>
+            </Col>
+        </>
+    )
 }
 
 MovieItem.propTypes = {
