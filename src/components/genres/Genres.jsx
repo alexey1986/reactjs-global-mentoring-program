@@ -1,20 +1,16 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import styles from './styles.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { getMoviesList } from 'service/index.js';
 import { mainGenres as genres } from '../../data.js';
 import { setParamsAction } from 'actions/actions';
 
 const Genres = () => {
     const dispatch = useDispatch();
-    const params = useSelector(state => state.fetchReducer.parameters);
     const filter = useSelector(state => state.fetchReducer.parameters.filter);
 
     const handleClick = (e) => {
         e.preventDefault();
         dispatch(setParamsAction({filter: e.target.getAttribute("data-value")}));
-
-        getMoviesList(dispatch, params);
     }
 
     return (

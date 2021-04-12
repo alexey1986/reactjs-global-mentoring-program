@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Header from 'components/header';
 import Search from 'components/search';
@@ -22,7 +22,7 @@ import ModalDialog from 'components/modal';
 import AddMovie from 'components/AddMovie';
 import EditMovie from 'components/editMovie';
 import DeleteMovie from 'components/deleteMovie';
-import { deleteMovie } from 'service/index.js';
+import { getMoviesList, deleteMovie } from 'service/index.js';
 import { toggleCreationForm, toggleDeleteModal, hideEditForm } from 'actions/actions';
 
 const App = () => {
@@ -34,9 +34,12 @@ const App = () => {
     const deleteFormModal = useSelector(state => state.modalReducer.deleteFormModal);
     const movieToEdit = useSelector(state => state.modalReducer.movieToEdit);
     const movieToDelete = useSelector(state => state.modalReducer.movieToDelete);
+    const params = useSelector(state => state.fetchReducer.parameters);
     const dispatch = useDispatch();
 
-    console.log()
+    useEffect(() => {
+        getMoviesList(dispatch, params);
+    }, [params]);
 
     return (
         <ErrorBoundary>

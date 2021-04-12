@@ -61,7 +61,7 @@ export const fetchReducer = (state = FETCH_REDUCER_STATE, action) => {
             return {
                 ...FETCH_REDUCER_STATE,
                 isLoading: false,
-                error: action.payload
+                error: action.error
             };
 
         case SET_PARAMS_ACTION:
