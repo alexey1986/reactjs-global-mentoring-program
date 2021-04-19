@@ -1,4 +1,5 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { genresOptions, labels, text } from '../../data.js';
@@ -20,7 +21,16 @@ const AddMovie = ({ handleClose }) => {
         })
     }
 
-    const schema = yup.object({
+    const initialValues = {
+        title: "",
+        release_date: "",
+        poster_path: "",
+        genres: [],
+        overview: "",
+        runtime: ""
+      }
+
+    const movieDataSchema = yup.object({
         title: yup.string().required(),
         release_date: yup.date().required(),
         poster_path: yup.string().url().required(),
@@ -31,16 +41,9 @@ const AddMovie = ({ handleClose }) => {
 
     return (
         <Formik
-          validationSchema={schema}
+          validationSchema={movieDataSchema}
           onSubmit={createMovieFunc}
-          initialValues={{
-            title: "",
-            release_date: "",
-            poster_path: "",
-            genres: [],
-            overview: "",
-            runtime: ""
-          }}
+          initialValues={initialValues}
         >
           {({
             handleSubmit,
@@ -127,5 +130,9 @@ const AddMovie = ({ handleClose }) => {
         </Formik>
     )
 }
+
+AddMovie.propTypes = {
+    data: PropTypes.func
+};
 
 export default AddMovie;
