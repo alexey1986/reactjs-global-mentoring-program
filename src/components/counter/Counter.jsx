@@ -7,9 +7,7 @@ const Counter = () => {
 
     if (!isLoading && count) {
         return <div>{count} movies found</div>
-    } else if (!isLoading) {
-        return <div>No movies found</div>
-    } 
+    }
     
     return null;
 }

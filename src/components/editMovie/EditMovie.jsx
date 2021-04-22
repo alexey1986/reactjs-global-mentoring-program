@@ -27,7 +27,7 @@ const EditMovie = ({ data, handleClose }) => {
         poster_path: yup.string().url().required(),
         genres: yup.array().nullable(),
         overview: yup.string().required(),
-        runtime: yup.number().max(120).required()
+        runtime: yup.number().max(320).required()
     });
 
     const formik = useFormik({

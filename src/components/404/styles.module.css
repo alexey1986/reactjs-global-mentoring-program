@@ -1,0 +1,15 @@
+.pageNotFound {
+    padding: 150px 0;
+    text-align: center;
+}
+
+.pageNotFoundText {
+    font-size: 50px;
+    font-weight: 300;
+}
+
+.errorCodeText {
+    font-size: 156px;
+    font-weight: bold;
+    margin: 50px 0;
+}

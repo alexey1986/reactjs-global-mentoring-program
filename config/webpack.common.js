@@ -31,7 +31,7 @@ module.exports = configDirs => {
             path: configDirs.BUILD_DIR,
             filename: 'bundle.compiled.js',
             sourceMapFilename: "bundle.compiled.js.map",
-            publicPath: ''
+            publicPath: '/'
         },
         devtool: "source-map"
     }

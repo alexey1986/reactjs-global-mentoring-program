@@ -1,13 +1,11 @@
 
 
 import React from 'react';
-import Link from 'components/link';
+import { Link } from "react-router-dom";
 
 const SearchButton = () => {
     return (
-        <Link target="/">
-            Back To Home Page
-        </Link>
+        <Link to="/">Back To Home Page</Link>
     )
 }
 

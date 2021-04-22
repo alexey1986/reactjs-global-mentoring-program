@@ -20,7 +20,10 @@ const FETCH_REDUCER_STATE = {
     totalAmount: null,
     error: null,
     parameters: {
-        limit: 6
+        filter: '',
+        limit: 6,
+        sortOrder: 'desc',
+        sortBy: 'release_date'
     }
 };
 
