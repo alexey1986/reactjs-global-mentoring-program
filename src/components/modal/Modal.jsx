@@ -2,23 +2,10 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 import ModalButtons from 'components/modalButtons';
 import Modal from 'react-bootstrap/Modal';
-import Form from 'react-bootstrap/Form';
 import { text } from '../../data.js';
 
 const ModalDialog = ({ type, visible, handleClose, handleDelete, children }) => {
     const { addMovieTxt, editMovieTxt, deleteMovieTxt } = text;
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-    }
-
-    const handleAdd = () => {
-        console.log('handleAdd')
-    }
-
-    const handleEdit = () => {
-        console.log('handleEdit')
-    }
 
     const removeMovieFunc = () => {
         handleDelete();
@@ -35,12 +22,10 @@ const ModalDialog = ({ type, visible, handleClose, handleDelete, children }) => 
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <Form onSubmit={handleSubmit}>
-                    {children}
-                </Form>
+                {children}
             </Modal.Body>
             <Modal.Footer>
-                <ModalButtons handleAdd={handleAdd} handleEdit={handleEdit} handleDelete={removeMovieFunc} type={type} />
+                <ModalButtons handleDelete={removeMovieFunc} type={type} />
             </Modal.Footer>
         </Modal>
     )
