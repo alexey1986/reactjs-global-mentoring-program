@@ -143,5 +143,8 @@ export const text = {
     editMovieTxt: 'EDIT MOVIE: ',
     deleteMovieTxt: 'DELETE MOVIE',
     fetchError: 'Fetch Error',
-    sortByTxt: 'Sort by'
+    sortByTxt: 'Sort by',
+    backToHome: 'Go Back to Home',
+    pageNotFound: 'Page Not Found',
+    errorCode404: '404'
 }
