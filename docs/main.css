@@ -1,0 +1,290 @@
+.header___7xmbW {
+    padding: 20px 0;
+}
+
+.logo___1x0tv {
+    color: #f65261;
+    font-size: 24px;
+    line-height: 1;
+}
+
+.logo___1x0tv:hover {
+    color: #f65261;
+    text-decoration: none;
+}
+.genres___1RuVT {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.genres___1RuVT li {
+    padding: 10px;
+}
+
+.genres___1RuVT li a {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.active___3yvya {
+    border-bottom: 2px solid #f65261;
+}
+.dropdownMenu___XlB2x {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 30;
+    background: #232323;
+    border-radius: 5px;
+    padding: 30px 30px 10px 15px;
+}
+
+.dropdownMenu___XlB2x ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdownMenu___XlB2x ul li {
+    cursor: pointer;
+    padding: 5px;
+    text-transform: uppercase;
+}
+
+.close___tUh2H {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.hidden___3o9X0 {
+    display: none;
+}
+
+
+.dropdownToggle___3jE3J {
+    position: relative;
+}
+
+.dropdownBtn___3jpn7 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 20;
+}
+
+
+.serialMeta___1u9Qc {
+    display: block;
+    overflow: hidden;
+    padding-bottom: 70px;
+}
+
+.serialTitle___1TJty,
+.serialGenre___DMrTl {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    color: #ccc;
+    display: block;
+}
+
+.serialTitle___1TJty {
+    font-family: "Montserrat",sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 15px 14px 30px 14px;
+}
+
+.serialGenre___DMrTl {
+    padding-right: 60px;
+    height: 16px;
+    overflow: hidden;
+    font-size: 10px;
+    font-weight: 400;
+    margin: 0 0 10px 14px;
+    max-width: 240px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+}
+
+.serialYear___BWfHM {
+    color: #ccc;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 0 14px 10px 0;
+    display: block;
+    padding: 2px 4px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    line-height: 1;
+}
+.serialWrapper___20ip4 {
+    padding: 15px 0;
+}
+
+.itemLink___2kZOI {
+    display: block;
+    color: inherit;
+    position: relative;
+    height: 100%;
+}
+
+.itemLink___2kZOI:hover {
+    text-decoration: none;
+}
+
+.serialPoster___Vq3vA {
+    position: relative;
+    margin: -1px;
+    width: calc(100% + 2px);
+    max-width: calc(100% + 2px);
+}
+
+.moviesList___2jbE3 {
+    background-color: #232323;
+    padding-bottom: 20px;
+}
+
+.loader___1nF7B {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    margin: 0;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 9999;
+}
+
+.loader___1nF7B:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid rgb(85, 135, 158);
+    border-color: rgb(111, 187, 218) transparent rgb(166, 224, 238) transparent;
+    animation: lds-dual-ring___1EZTo 1.2s linear infinite;
+    position: absolute;
+    top: calc(50% - 32px);
+    left: calc(50% - 32px);
+}
+
+@keyframes lds-dual-ring___1EZTo {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
+.footer___3aAW0 {
+    background-color: #424242;
+    color: #f65261;
+    font-size: 24px;
+    line-height: 1;
+    padding: 15px 0;
+}
+.movieDetails___1QIWw {
+    margin-top: 30px;
+    padding: 20px 0;
+}
+
+.genre___eHKgq {
+    background-color: #f3f3f3;
+    margin: 20px 0 5px;
+    padding: 15px;
+}
+
+.movieDescription___1GxRC {
+    padding-top: 63px;
+}
+
+.flexbox___2Zvct {
+    display: flex;
+    align-items: center;
+}
+
+.rating___AlmNJ {
+    margin-left: 20px;
+    border: 1px solid #1e7e34;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    flex-shrink: 0;
+}
+
+.year___nkD4O, .runtime___2w5kj {
+    color: #f65261;
+    font-size: 24px;
+    margin-right: 50px;
+}
+
+.logo___3a7an {
+    color: #f65261;
+    font-size: 24px;
+    line-height: 1;
+}
+
+.logo___3a7an:hover {
+    color: #f65261;
+    text-decoration: none;
+}
+
+.content___1PpSe {
+    background: #232323;
+}
+
+.filteringSorting___3hT5G {
+    border-bottom: 2px solid #555;
+    margin-bottom: 15px;
+    padding-top: 15px;
+}
+
+
+.formLabel___3YeNB {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 300;
+    letter-spacing: 5px;
+    margin: 20px 0 15px;
+    text-transform: uppercase;
+}
+.content___3Dcs- {
+    background: #232323;
+}
+
+.filteringSorting___3n4n_ {
+    border-bottom: 2px solid #555;
+    margin-bottom: 15px;
+    padding-top: 15px;
+}
+.pageNotFound___3JNhB {
+    padding: 150px 0;
+    text-align: center;
+}
+
+.pageNotFoundText___UqvgG {
+    font-size: 50px;
+    font-weight: 300;
+}
+
+.errorCodeText___2pGJu {
+    font-size: 156px;
+    font-weight: bold;
+    margin: 50px 0;
+}
+
+/*# sourceMappingURL=index.js.map*/
+/*# sourceMappingURL=bundle.compiled.js.map*/

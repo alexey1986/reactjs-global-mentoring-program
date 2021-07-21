@@ -1,6 +1,6 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
-import ModalButtons from 'components/modalButtons';
+import ModalButtons from '@components/modalButtons';
 import Modal from 'react-bootstrap/Modal';
 import { text } from '../../data.js';
 

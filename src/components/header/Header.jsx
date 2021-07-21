@@ -1,6 +1,6 @@
 import React from 'react';
 import parse from 'html-react-parser';
-import Link from 'components/link';
+import Link from '@components/link';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import styles from './styles.module.css';

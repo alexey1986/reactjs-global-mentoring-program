@@ -9,9 +9,9 @@ import {
     HIDE_EDIT_FORM,
     TOGGLE_DELETE_MODAL,
     SET_PARAMS_ACTION
-} from 'actionTypes/types';
+} from '@actionTypes/types';
 
-const FETCH_REDUCER_STATE = {
+export const FETCH_REDUCER_STATE = {
     movies: [],
     selectedMovie: null,
     isLoading: false,
@@ -80,7 +80,7 @@ export const fetchReducer = (state = FETCH_REDUCER_STATE, action) => {
     return state;
 }
 
-const MODAL_REDUCER_STATE = {
+export const MODAL_REDUCER_STATE = {
     creationFormModal: false,
     editFormModal: false,
     deleteFormModal: false

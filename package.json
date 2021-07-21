@@ -7,7 +7,9 @@
     "build:prod": "webpack --env=prod",
     "build:dev": "webpack --env=dev",
     "start": "webpack-dev-server --env=dev --open --hot",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "jest": {
     "setupFiles": [
@@ -16,9 +18,24 @@
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ],
+    "modulePaths": [
+      "src"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "./src/__mocks__/fileMock.js",
-      "\\.(css|less)$": "identity-obj-proxy"
+      "\\.(css|less)$": "identity-obj-proxy",
+      "^@root(.*)$": "<rootDir>/src$1",
+      "^@components(.*)$": "<rootDir>/src/components$1",
+      "^@actions(.*)$": "<rootDir>/src/actions$1",
+      "^@actionTypes(.*)$": "<rootDir>/src/actionTypes$1",
+      "^@reducers(.*)$": "<rootDir>/src/reducers$1"
     }
   },
   "repository": {
@@ -32,6 +49,7 @@
   },
   "homepage": "https://github.com/alexey1986/reactjs-global-mentoring-program#readme",
   "dependencies": {
+    "@testing-library/react": "^11.2.7",
     "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
     "formik": "^2.2.6",
@@ -71,6 +89,7 @@
     "prop-types": "^15.7.1",
     "react-test-renderer": "^16.13.1",
     "redux-devtools": "^3.7.0",
+    "redux-mock-store": "^1.5.4",
     "source-map-loader": "^0.2.4",
     "style-loader": "^0.23.1",
     "uglifyjs-webpack-plugin": "^2.2.0",

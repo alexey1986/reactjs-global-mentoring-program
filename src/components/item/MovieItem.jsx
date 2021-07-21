@@ -1,9 +1,9 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { toggleEditForm, toggleDeleteModal } from 'actions/actions';
-import Dropdown from 'components/dropdown';
-import MovieInfo from 'components/info';
+import { toggleEditForm, toggleDeleteModal } from '@actions/actions';
+import Dropdown from '@components/dropdown';
+import MovieInfo from '@components/info';
 import { Link } from "react-router-dom";
 import Col from 'react-bootstrap/Col';
 import styles from './styles.module.css';

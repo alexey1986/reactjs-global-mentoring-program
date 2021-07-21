@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux';
 import { createMovie } from 'service/index.js';
 import { Formik } from "formik";
 import * as yup from "yup";
-import { FormTextField, FormSelectField } from "components/form-field";
+import { FormTextField, FormSelectField } from "@components/form-field";
 
 const AddMovie = ({ handleClose }) => {
     const { titleLabel, releaseDateLabel, selectDateLabel, movieUrlLabel, genreLabel, selectGenreLabel, overviewLabel, runtimeLabel, hereLabel } = labels;

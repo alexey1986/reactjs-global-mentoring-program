@@ -1,4 +1,4 @@
-import { APIUrl } from 'src/settings';
+import { APIUrl } from '@src/settings';
 
 const fetchDataRequest = async (url, options, successCallback, errorCallback) => {
     try {

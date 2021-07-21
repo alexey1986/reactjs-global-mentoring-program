@@ -4,7 +4,7 @@ const dev = require('./config/webpack.dev.js');
 const prod = require('./config/webpack.prod.js');
 
 const path = require('path');
-const BUILD_DIR = path.resolve(__dirname, './dist');
+const BUILD_DIR = path.resolve(__dirname, './docs');
 const APP_DIR = path.resolve(__dirname, './src');
 
 const configDirs = {

@@ -10,7 +10,7 @@ import {
     TOGGLE_DELETE_MODAL,
     CREATION_FORM_SUBMIT,
     SET_PARAMS_ACTION
-} from 'actionTypes/types';
+} from '@actionTypes/types';
 
 
 // action creators
@@ -59,4 +59,4 @@ export const creationFormSubmit = data => ({
 export const setParamsAction = data => ({
     type: SET_PARAMS_ACTION,
     payload: data
-})
+});

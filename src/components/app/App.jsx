@@ -1,8 +1,8 @@
 import React from 'react';
-import MovieDetails from 'components/details';
-import Home from 'components/home';
-import NotFoundPage from 'components/404'
-import ErrorBoundary from 'components/error';
+import MovieDetails from '@components/details';
+import Home from '@components/home';
+import NotFoundPage from '@components/404'
+import ErrorBoundary from '@components/error';
 import {
     BrowserRouter as Router,
     Switch,

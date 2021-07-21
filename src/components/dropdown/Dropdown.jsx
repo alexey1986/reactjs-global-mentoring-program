@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import DropdownMenu from 'components/dropdownMenu';
+import DropdownMenu from '@components/dropdownMenu';
 import Button from 'react-bootstrap/Button'
 import styles from './styles.module.css';
 

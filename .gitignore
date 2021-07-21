@@ -27,4 +27,4 @@ yarn-debug.log*
 yarn-error.log*
 /babel.config.js
 /.vs
-/docs
+# /docs
