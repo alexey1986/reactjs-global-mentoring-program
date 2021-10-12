@@ -34,6 +34,8 @@ const MovieItem = (props) => {
             <Col md={4} className={serialWrapper}>
                 <Dropdown handleEdit={showModalEdit} handleDelete={showModalDelete} />
                 <Link className={styles.itemLink} title={title} to={destination}>
+                    {/* NOTE: Add a default image for empty images from server.
+                    For example, image with words "No Image Found" or something else */}
                     <img className={serialPoster} src={poster_path} alt={title} />
                     <MovieInfo meta={movie} />
                 </Link>
@@ -43,7 +45,7 @@ const MovieItem = (props) => {
 }
 
 MovieItem.propTypes = {
-    movie: PropTypes.object
+    movie: PropTypes.object // NOTE: Specify the object
 };
 
 export default MovieItem;

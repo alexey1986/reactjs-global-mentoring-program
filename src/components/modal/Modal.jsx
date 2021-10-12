@@ -16,6 +16,8 @@ const ModalDialog = ({ type, visible, handleClose, handleDelete, children }) => 
         <Modal centered show={visible} onHide={handleClose}>
             <Modal.Header closeButton>
                 <Modal.Title>
+                    {/* NOTE: Use only "===" when you write JS code.
+                    It can help you to find errors or bugs reasons and makes code clean */}
                     {type == 'add' && addMovieTxt}
                     {type == 'edit' && editMovieTxt}
                     {type == 'delete' && deleteMovieTxt}

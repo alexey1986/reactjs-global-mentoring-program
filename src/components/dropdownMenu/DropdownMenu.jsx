@@ -21,4 +21,6 @@ const DropdownMenu = ({ visible, handleToggle, handleEdit, handleDelete }) => {
     )
 }
 
+// NOTE: Add PropTypes here
+
 export default DropdownMenu;

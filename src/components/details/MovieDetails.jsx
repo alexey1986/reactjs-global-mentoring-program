@@ -42,6 +42,8 @@ const MovieDetails = ({ location, match }) => {
                             <Col sm={9}>
                                 <div className={styles.flexbox}>
                                     <h1>{selectedMovie.title}</h1>
+                                    {/* NOTE: Better to convert "selectedMovie.vote_count" to boolean like "!!selectedMovie.vote_count".
+                                    Because when "selectedMovie.vote_count" is 0, it will render 0 instead of nothing */}
                                     {selectedMovie.vote_count && <span className={styles.rating}>{selectedMovie.vote_count}</span>}
                                 </div>
                                 <p>{selectedMovie.tagline}</p>
@@ -79,5 +81,7 @@ const MovieDetails = ({ location, match }) => {
         </>
     )
 }
+
+// NOTE: Add PropTypes here
 
 export default MovieDetails;

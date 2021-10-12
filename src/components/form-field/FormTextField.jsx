@@ -43,4 +43,6 @@ FormTextFieldControl.defaultProps = {
     inputGroupPrepend: null
 };
 
+// NOTE: Add PropTypes here
+
 export default FormTextFieldControl;

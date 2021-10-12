@@ -49,4 +49,6 @@ FormSelectFieldControl.defaultProps = {
     inputGroupPrepend: null
 };
 
+// NOTE: Add PropTypes here
+
 export default FormSelectFieldControl;

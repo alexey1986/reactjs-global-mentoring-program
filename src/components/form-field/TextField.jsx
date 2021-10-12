@@ -31,4 +31,6 @@ const TextFieldControl = ({
     )
 }
 
+// NOTE: Add PropTypes here
+
 export default TextFieldControl;

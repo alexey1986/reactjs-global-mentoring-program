@@ -15,10 +15,13 @@ const MovieInfo = (props) => {
             <span className={serialYear}>{year}</span>
         </div>
     )
-}
+} 
 
 MovieInfo.propTypes = {
-    movie: PropTypes.object
+    movie: PropTypes.object // NOTE: Specify what kind of object it would be
+    // NOTE: Add additional types. I see you use something else
+    // Actually, looks like you need to use "meta" instead of "movie"
+    // Or use "movie" instead of "meta" in the component
 };
 
 export default MovieInfo;

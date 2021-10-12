@@ -28,6 +28,7 @@ const MoviesList = () => {
 
     useEffect(() => {
         if (query) {
+            // NOTE: Delete it if you don't use it
             // params = {...params, ...{ search: query, searchBy: 'title', limit: ''}}
             params = { search: query, searchBy: 'title', limit: ''}
         }
