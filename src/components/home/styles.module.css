@@ -1,5 +1,6 @@
 .content {
     background: #232323;
+    flex-grow: 1;
 }
 
 .filteringSorting {

@@ -1,5 +1,6 @@
 
 import React from "react";
+import { PropTypes } from 'prop-types';
 import { Form, InputGroup } from "react-bootstrap";
 
 const SelectFieldControl = ({
@@ -37,6 +38,16 @@ const SelectFieldControl = ({
     )
 }
 
-// NOTE: Add PropTypes here
+SelectFieldControl.propTypes = {
+    id: PropTypes.string,
+    label: PropTypes.string,
+    name: PropTypes.string,
+    placeholder: PropTypes.string,
+    value: PropTypes.array,
+    handleChange: PropTypes.func,
+    error: PropTypes.bool,
+    errorTxt: PropTypes.string,
+    options: PropTypes.array,
+};
 
 export default SelectFieldControl;

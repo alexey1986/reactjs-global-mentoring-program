@@ -1,5 +1,6 @@
 
 import React from "react";
+import { PropTypes } from 'prop-types';
 import { Form, InputGroup } from "react-bootstrap";
 
 const TextFieldControl = ({
@@ -31,6 +32,19 @@ const TextFieldControl = ({
     )
 }
 
-// NOTE: Add PropTypes here
+TextFieldControl.propTypes = {
+    id: PropTypes.string,
+    label: PropTypes.string,
+    name: PropTypes.string,
+    type: PropTypes.string,
+    placeholder: PropTypes.string,
+    value: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number
+    ]),
+    handleChange: PropTypes.func,
+    error: PropTypes.bool,
+    errorTxt: PropTypes.string,
+};
 
 export default TextFieldControl;
