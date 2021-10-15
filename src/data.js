@@ -146,5 +146,9 @@ export const text = {
     sortByTxt: 'Sort by',
     backToHome: 'Go Back to Home',
     pageNotFound: 'Page Not Found',
-    errorCode404: '404'
+    errorCode404: '404',
+    imageNotFound: 'Image Not Found',
+    placeholderTxt: 'What do you want to watch?',
+    findMovieTxt: 'Find your movie',
+    searchTxt: 'Search'
 }

@@ -11,21 +11,8 @@ import {
     SET_PARAMS_ACTION
 } from 'actionTypes/types';
 
-const FETCH_REDUCER_STATE = {
-    movies: [],
-    selectedMovie: null,
-    isLoading: false,
-    limit: null,
-    offset: null,
-    totalAmount: null,
-    error: null,
-    parameters: {
-        filter: '',
-        limit: 6,
-        sortOrder: 'desc',
-        sortBy: 'release_date'
-    }
-};
+import { FETCH_REDUCER_STATE, MODAL_REDUCER_STATE } from 'src/settings';
+
 
 export const fetchReducer = (state = FETCH_REDUCER_STATE, action) => {
 
@@ -80,11 +67,6 @@ export const fetchReducer = (state = FETCH_REDUCER_STATE, action) => {
     return state;
 }
 
-const MODAL_REDUCER_STATE = {
-    creationFormModal: false,
-    editFormModal: false,
-    deleteFormModal: false
-}
 
 export const modalReducer = (state = MODAL_REDUCER_STATE, action) => {
 
