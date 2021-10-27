@@ -18,10 +18,15 @@ const MovieInfo = (props) => {
 } 
 
 MovieInfo.propTypes = {
-    movie: PropTypes.object // NOTE: Specify what kind of object it would be
-    // NOTE: Add additional types. I see you use something else
-    // Actually, looks like you need to use "meta" instead of "movie"
-    // Or use "movie" instead of "meta" in the component
+    meta: PropTypes.shape({
+        genres: PropTypes.array,
+        id: PropTypes.number,
+        overview: PropTypes.string,
+        poster_path: PropTypes.string,
+        release_date: PropTypes.string,
+        runtime: PropTypes.number,
+        title: PropTypes.string
+    })
 };
 
 export default MovieInfo;

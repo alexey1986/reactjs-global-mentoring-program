@@ -1,7 +1,6 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
-
-// NOTE: Add styles to show the error text not on the top of the page but maybe on center or with padding
+import styles from './styles.module.css';
 
 class ErrorBoundary extends React.Component {
     constructor(props) {
@@ -9,7 +8,7 @@ class ErrorBoundary extends React.Component {
         this.state = { hasError: false };
     }
 
-    static getDerivedStateFromError(error) { // NOTE: Delete prop if you don't use it
+    static getDerivedStateFromError() {
         return { hasError: true };
     }
 
@@ -20,10 +19,11 @@ class ErrorBoundary extends React.Component {
     render() {
         if (this.state.hasError) {
             return (
-                <Container>
-                    {/* NOTE: Translate it to english */}
-                    <h1>Что-то пошло не так.</h1>
-                </Container>
+                <div className={styles.errorBoundary}>
+                    <Container>
+                        <h1 className={styles.errorBoundaryTitle}>Something went wrong</h1>
+                    </Container>
+                </div>
             )
         }
 

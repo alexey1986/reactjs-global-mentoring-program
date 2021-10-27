@@ -18,6 +18,13 @@ body {
     text-transform: uppercase;
 }
 
+#root {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .modal-content {
     background-color: #232323;
 }
