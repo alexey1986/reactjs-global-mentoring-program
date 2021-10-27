@@ -2,9 +2,9 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import { text } from '../../data.js';
 import { useDispatch, useSelector } from 'react-redux';
-import ModalDialog from 'components/modal';
-import AddMovie from 'components/AddMovie';
-import { toggleCreationForm } from 'actions/actions';
+import ModalDialog from '@components/modal';
+import AddMovie from '@components/AddMovie';
+import { toggleCreationForm } from '@actions/actions';
 
 const AddBtn = () => {
     const creationFormModal = useSelector(state => state.modalReducer.creationFormModal);

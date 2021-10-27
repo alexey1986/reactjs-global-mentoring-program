@@ -9,9 +9,9 @@ import {
     HIDE_EDIT_FORM,
     TOGGLE_DELETE_MODAL,
     SET_PARAMS_ACTION
-} from 'actionTypes/types';
+} from '@actionTypes/types';
 
-import { FETCH_REDUCER_STATE, MODAL_REDUCER_STATE } from 'src/settings';
+import { FETCH_REDUCER_STATE, MODAL_REDUCER_STATE } from '@src/settings';
 
 
 export const fetchReducer = (state = FETCH_REDUCER_STATE, action) => {

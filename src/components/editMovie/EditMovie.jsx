@@ -3,10 +3,10 @@ import { Form, Button } from 'react-bootstrap';
 import { PropTypes } from 'prop-types';
 import { genresOptions, labels, text } from '../../data.js';
 import { useDispatch } from 'react-redux';
-import { editMovie as editRequest } from 'service/index.js';
+import { editMovie as editRequest } from '@service/index.js';
 import { useFormik } from 'formik';
 import * as yup from "yup";
-import { TextField, SelectField } from "components/form-field";
+import { TextField, SelectField } from "@components/form-field";
 
 const EditMovie = ({ data, handleClose }) => {
     const { editMovie, titleLabel, releaseDateLabel, movieUrlLabel, selectDateLabel, genreLabel, overviewLabel, runtimeLabel, hereLabel } = labels;

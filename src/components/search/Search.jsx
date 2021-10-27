@@ -1,41 +1,41 @@
-import React, { useRef, useCallback } from 'react';
-import { useHistory, useParams } from "react-router-dom";
-import { Col, Form, Button } from 'react-bootstrap';
-import styles from './styles.module.css'
-import { text } from '../../data.js';
+import React from "react";
+import { PropTypes } from 'prop-types';
+import { Col, Form, Button } from "react-bootstrap";
+import styles from "./styles.module.css";
+import { text } from "../../data.js";
 
-const Search = () => {
-    const { placeholderTxt, findMovieTxt, searchTxt } = text;    
-    const input = useRef();    
-    const history = useHistory();
-    const { query } = useParams();
-
-    const handleChange = useCallback(() => {
-        !input.current.value.length && history.push('/');
-    }, []);
-
-    const submitHandle = (e) => {
-        e.preventDefault();
-        history.push(`/search/${input.current.value}`);
-    }
+const Search = ({ submitHandler, changeHandler, defaultValue }) => {
+    const { placeholderTxt, findMovieTxt, searchTxt } = text;
 
     return (
-        <Form onSubmit={submitHandle}>
-            <Form.Label className={styles.formLabel}>
+        <Form onSubmit={submitHandler}>
+            <Form.Label htmlFor="searchField" className={styles.formLabel}>
                 {findMovieTxt}
             </Form.Label>
             <Form.Row>
                 <Col>
-                    <Form.Group controlId="formBasicEmail">
-                        <Form.Control ref={input} type="search" defaultValue={query} placeholder={placeholderTxt} onChange={handleChange} />
+                    <Form.Group controlId="searchField">
+                        <Form.Control
+                            name="searchMovie"
+                            type="search"
+                            defaultValue={defaultValue}
+                            placeholder={placeholderTxt}
+                            onChange={changeHandler}
+                        />
                     </Form.Group>
                 </Col>
                 <Col>
-                    <Button type="submit">{searchTxt}</Button>
+                    <Button type="submit" >{searchTxt}</Button>
                 </Col>
             </Form.Row>
         </Form>
-    )
-}
+    );
+};
+
+Search.propTypes = {
+    submitHandler: PropTypes.func,
+    changeHandler: PropTypes.func,
+    defaultValue: PropTypes.string
+};
 
 export default Search;

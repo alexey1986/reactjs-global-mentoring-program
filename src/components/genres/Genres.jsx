@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './styles.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { mainGenres as genres } from '../../data.js';
-import { setParamsAction } from 'actions/actions';
+import { setParamsAction } from '@actions/actions';
 
 const Genres = () => {
     const dispatch = useDispatch();

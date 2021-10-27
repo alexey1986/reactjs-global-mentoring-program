@@ -1,12 +1,11 @@
 import React from 'react';
-import Header from 'components/header';
-import Search from 'components/search';
-import Genres from 'components/genres';
-import Sort from 'components/sort';
-import Counter from 'components/counter';
-import MoviesList from 'components/list';
-import Footer from 'components/footer';
-import AddBtn from 'components/AddBtn';
+import Header from '@components/header';
+import Genres from '@components/genres';
+import Sort from '@components/sort';
+import Counter from '@components/counter';
+import MoviesList from '@components/list';
+import Footer from '@components/footer';
+import AddBtn from '@components/AddBtn';
 import { Container, Row, Col } from 'react-bootstrap';
 import styles from './styles.module.css';
 
@@ -15,10 +14,9 @@ const Home = () => {
     return (
         <>
             <Container>
-                <Header>
+                <Header isSearchable={true}>
                     <AddBtn />
                 </Header>
-                <Search />
             </Container>
             <div className={styles.content}>
                 <Container>
