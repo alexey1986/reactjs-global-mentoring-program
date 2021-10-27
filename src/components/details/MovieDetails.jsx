@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { PropTypes } from 'prop-types';
 import { Container, Row, Col } from 'react-bootstrap';
 import Header from 'components/header';
 import SearchButton from 'components/searchBtn';
@@ -11,6 +12,8 @@ import Footer from 'components/footer';
 import { useDispatch, useSelector } from 'react-redux';
 import { getMovie } from 'service/index.js';
 import styles from './styles.module.css';
+import imageNotFound from 'assets/images/notfound.png'
+import { text } from '../../data.js';
 
 const MovieDetails = ({ location, match }) => {
     const getFullYear = date => new Date(date).getFullYear();
@@ -20,6 +23,11 @@ const MovieDetails = ({ location, match }) => {
     const selectedMovie = useSelector(state => state.fetchReducer.selectedMovie);
 
     const dispatch = useDispatch();
+
+    const handleSrcError = ({ target }) => {
+        target.src = imageNotFound;
+        target.alt = text.imageNotFound;
+    };
 
     useEffect(() => {
         getMovie(dispatch, match.params.id);
@@ -37,12 +45,12 @@ const MovieDetails = ({ location, match }) => {
 
                         <Row className={styles.movieDetails}>
                             <Col sm={3}>
-                                <img className="img-fluid" src={selectedMovie.poster_path} alt={selectedMovie.title} />
+                                <img className="img-fluid" src={selectedMovie.poster_path} alt={selectedMovie.title} onError={handleSrcError} />
                             </Col>
                             <Col sm={9}>
                                 <div className={styles.flexbox}>
                                     <h1>{selectedMovie.title}</h1>
-                                    {selectedMovie.vote_count && <span className={styles.rating}>{selectedMovie.vote_count}</span>}
+                                    {Boolean(selectedMovie.vote_count) && <span className={styles.rating}>{selectedMovie.vote_count}</span>}
                                 </div>
                                 <p>{selectedMovie.tagline}</p>
                                 <p>{selectedMovie.genres && arrayToString(selectedMovie.genres)}</p>
@@ -79,5 +87,10 @@ const MovieDetails = ({ location, match }) => {
         </>
     )
 }
+
+MovieDetails.propTypes = {
+    location: PropTypes.object,
+    match: PropTypes.object
+};
 
 export default MovieDetails;

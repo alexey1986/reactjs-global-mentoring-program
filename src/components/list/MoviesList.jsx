@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getMoviesList } from 'service/index.js';
@@ -8,6 +8,7 @@ import ModalDialog from 'components/modal';
 import NoMoviesFound from 'components/noMoviesFound';
 import EditMovie from 'components/editMovie';
 import DeleteMovie from 'components/deleteMovie';
+import Loader from 'components/loader';
 import { deleteMovie } from 'service/index.js';
 import { toggleDeleteModal, hideEditForm } from 'actions/actions';
 import styles from './styles.module.css';
@@ -20,20 +21,31 @@ const MoviesList = () => {
     const deleteFormModal = useSelector(state => state.modalReducer.deleteFormModal);
     const movieToEdit = useSelector(state => state.modalReducer.movieToEdit);
     const movieToDelete = useSelector(state => state.modalReducer.movieToDelete);
+    const isLoading = useSelector(state => state.fetchReducer.isLoading);
 
     const dispatch = useDispatch();
 
     const { query } = useParams();
 
+    const closeEditDialog = useCallback(() => {
+        dispatch(hideEditForm());
+    }, []);
+
+    const closeDeleteDialog = useCallback(() => {
+        dispatch(toggleDeleteModal())
+    }, []);
+
+    const deleteMovieHandler = useCallback(() => {
+        deleteMovie(dispatch, movieToDelete)
+    }, []);
 
     useEffect(() => {
         if (query) {
-            // params = {...params, ...{ search: query, searchBy: 'title', limit: ''}}
             params = { search: query, searchBy: 'title', limit: ''}
         }
-        
         getMoviesList(dispatch, params);
     }, [params, query]);
+
 
     return (
         <>
@@ -48,17 +60,19 @@ const MoviesList = () => {
                         }
                     </Row>
                     {
-                        !count && <NoMoviesFound />
+                        (!count && !isLoading) && <NoMoviesFound />
                     }
                 </Container>
             </div>
 
-            <ModalDialog type='edit' visible={editFormModal} handleClose={() => dispatch(hideEditForm())}>
-                <EditMovie data={movieToEdit} handleClose={() => dispatch(hideEditForm())} />
+            { isLoading && <Loader />}
+
+            <ModalDialog type='edit' visible={editFormModal} handleClose={() => closeEditDialog()}>
+                <EditMovie data={movieToEdit} handleClose={() => closeEditDialog()} />
             </ModalDialog>
 
-            <ModalDialog type='delete' visible={deleteFormModal} handleClose={() => dispatch(toggleDeleteModal())} handleDelete={() => deleteMovie(dispatch, movieToDelete)}>
-                <DeleteMovie />
+            <ModalDialog type='delete' visible={deleteFormModal} handleClose={() => closeDeleteDialog()}>
+                <DeleteMovie handleClose={() => closeDeleteDialog()} handleDelete={() => deleteMovieHandler()} />
             </ModalDialog>
         </>
     )

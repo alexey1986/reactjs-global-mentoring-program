@@ -1,0 +1,13 @@
+.errorBoundary {
+    background: #232323;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.errorBoundaryTitle {
+    color: #f65261;
+    font-size: 46px;
+    text-align: center;
+}

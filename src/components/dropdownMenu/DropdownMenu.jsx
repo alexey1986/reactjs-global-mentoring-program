@@ -1,4 +1,5 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 import Button from 'react-bootstrap/Button'
 import styles from './styles.module.css';
 import { text } from '../../data.js';
@@ -20,5 +21,12 @@ const DropdownMenu = ({ visible, handleToggle, handleEdit, handleDelete }) => {
         </div>
     )
 }
+
+DropdownMenu.propTypes = {
+    visible: PropTypes.bool,
+    handleToggle: PropTypes.func,
+    handleEdit: PropTypes.func,
+    handleDelete: PropTypes.func
+};
 
 export default DropdownMenu;

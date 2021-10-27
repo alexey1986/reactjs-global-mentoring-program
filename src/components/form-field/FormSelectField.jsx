@@ -1,10 +1,9 @@
 import React from "react";
+import { PropTypes } from 'prop-types';
 import { Form, InputGroup } from "react-bootstrap";
 import { Field } from "formik";
 
 const FormSelectFieldControl = ({
-    as,
-    md,
     controlId,
     label,
     name,
@@ -19,7 +18,7 @@ const FormSelectFieldControl = ({
                 const isInvalid = form.touched[field.name] && !isValid;
 
                 return (
-                    <Form.Group as={as} md={md} controlId={controlId}>
+                    <Form.Group controlId={controlId}>
                         <Form.Label>{label}</Form.Label>
                         <InputGroup>
                             <Form.Control
@@ -47,6 +46,14 @@ const FormSelectFieldControl = ({
 FormSelectFieldControl.defaultProps = {
     type: "select",
     inputGroupPrepend: null
+};
+
+FormSelectFieldControl.propTypes = {
+    controlId: PropTypes.string,
+    label: PropTypes.string,
+    name: PropTypes.string,
+    type: PropTypes.string,
+    children: PropTypes.node
 };
 
 export default FormSelectFieldControl;

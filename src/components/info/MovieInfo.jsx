@@ -15,10 +15,18 @@ const MovieInfo = (props) => {
             <span className={serialYear}>{year}</span>
         </div>
     )
-}
+} 
 
 MovieInfo.propTypes = {
-    movie: PropTypes.object
+    meta: PropTypes.shape({
+        genres: PropTypes.array,
+        id: PropTypes.number,
+        overview: PropTypes.string,
+        poster_path: PropTypes.string,
+        release_date: PropTypes.string,
+        runtime: PropTypes.number,
+        title: PropTypes.string
+    })
 };
 
 export default MovieInfo;

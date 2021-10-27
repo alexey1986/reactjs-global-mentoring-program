@@ -1,26 +1,22 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { Link } from "react-router-dom";
-import { Col, Form } from 'react-bootstrap';
+import React, { useRef, useCallback } from 'react';
+import { useHistory, useParams } from "react-router-dom";
+import { Col, Form, Button } from 'react-bootstrap';
 import styles from './styles.module.css'
+import { text } from '../../data.js';
 
 const Search = () => {
-    const placeholderTxt = 'What do you want to watch?';
-    const findMovieTxt = 'Find your movie';
-    const searchTxt = 'Search';
+    const { placeholderTxt, findMovieTxt, searchTxt } = text;    
+    const input = useRef();    
+    const history = useHistory();
+    const { query } = useParams();
 
-    const input = useRef();
-    let btn;
-
-    const [query, setQuery] = useState('');
-
-    const handleChange = (e) => {
-        setQuery(e.target.value);
-    }
+    const handleChange = useCallback(() => {
+        !input.current.value.length && history.push('/');
+    }, []);
 
     const submitHandle = (e) => {
         e.preventDefault();
-        setQuery(input.current.value);
-        btn.click();
+        history.push(`/search/${input.current.value}`);
     }
 
     return (
@@ -31,11 +27,11 @@ const Search = () => {
             <Form.Row>
                 <Col>
                     <Form.Group controlId="formBasicEmail">
-                        <Form.Control ref={input} type="search" placeholder={placeholderTxt} onChange={handleChange} />
+                        <Form.Control ref={input} type="search" defaultValue={query} placeholder={placeholderTxt} onChange={handleChange} />
                     </Form.Group>
                 </Col>
                 <Col>
-                    <Link ref={node => (btn = node)} className="btn btn-primary" to={`/search/${query}`}>{searchTxt}</Link>
+                    <Button type="submit">{searchTxt}</Button>
                 </Col>
             </Form.Row>
         </Form>

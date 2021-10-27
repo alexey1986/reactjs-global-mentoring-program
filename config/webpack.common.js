@@ -13,7 +13,7 @@ module.exports = configDirs => {
                 actionTypes: configDirs.APP_DIR + '/actionTypes/',
                 actions: configDirs.APP_DIR + '/actions/',
                 service: configDirs.APP_DIR + '/service/',
-                api:  configDirs.APP_DIR + '/api/'
+                assets:  configDirs.APP_DIR + '/assets/'
             },
             extensions: ['.js', '.jsx']
         },

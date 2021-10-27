@@ -1,5 +1,6 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
+import styles from './styles.module.css';
 
 class ErrorBoundary extends React.Component {
     constructor(props) {
@@ -7,7 +8,7 @@ class ErrorBoundary extends React.Component {
         this.state = { hasError: false };
     }
 
-    static getDerivedStateFromError(error) {
+    static getDerivedStateFromError() {
         return { hasError: true };
     }
 
@@ -18,9 +19,11 @@ class ErrorBoundary extends React.Component {
     render() {
         if (this.state.hasError) {
             return (
-                <Container>
-                    <h1>Что-то пошло не так.</h1>
-                </Container>
+                <div className={styles.errorBoundary}>
+                    <Container>
+                        <h1 className={styles.errorBoundaryTitle}>Something went wrong</h1>
+                    </Container>
+                </div>
             )
         }
 

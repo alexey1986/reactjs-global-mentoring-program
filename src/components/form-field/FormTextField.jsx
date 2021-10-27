@@ -1,4 +1,5 @@
 import React from "react";
+import { PropTypes } from 'prop-types';
 import { Form, InputGroup } from "react-bootstrap";
 import { Field } from "formik";
 
@@ -41,6 +42,14 @@ const FormTextFieldControl = ({
 FormTextFieldControl.defaultProps = {
     type: "text",
     inputGroupPrepend: null
+};
+
+FormTextFieldControl.propTypes = {
+    controlId: PropTypes.string,
+    label: PropTypes.string,
+    name: PropTypes.string,
+    type: PropTypes.string,
+    placeholder: PropTypes.string
 };
 
 export default FormTextFieldControl;

@@ -133,7 +133,10 @@ const EditMovie = ({ data, handleClose }) => {
 }
 
 EditMovie.propTypes = {
-    data: PropTypes.object,
+    data: PropTypes.shape({
+        id: PropTypes.number,
+        title: PropTypes.string
+    }),
     handleClose: PropTypes.func
 };
 
