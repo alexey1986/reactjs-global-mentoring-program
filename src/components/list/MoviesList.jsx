@@ -1,16 +1,15 @@
 import React, { useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { getMoviesList } from 'service/index.js';
+import { getMoviesList, deleteMovie } from '@service/index.js';
 import { Container, Row } from 'react-bootstrap';
-import MovieItem from 'components/item';
-import ModalDialog from 'components/modal';
-import NoMoviesFound from 'components/noMoviesFound';
-import EditMovie from 'components/editMovie';
-import DeleteMovie from 'components/deleteMovie';
-import Loader from 'components/loader';
-import { deleteMovie } from 'service/index.js';
-import { toggleDeleteModal, hideEditForm } from 'actions/actions';
+import MovieItem from '@components/item';
+import ModalDialog from '@components/modal';
+import NoMoviesFound from '@components/noMoviesFound';
+import EditMovie from '@components/editMovie';
+import DeleteMovie from '@components/deleteMovie';
+import Loader from '@components/loader';
+import { toggleDeleteModal, hideEditForm } from '@actions/actions';
 import styles from './styles.module.css';
 
 const MoviesList = () => {

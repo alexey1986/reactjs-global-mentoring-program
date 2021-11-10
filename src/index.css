@@ -4,7 +4,7 @@ body {
 }
 
 body {
-    background: #232323 url("./bg.jpg") no-repeat 0 0;
+    background: #232323 url("./bg.jpg") no-repeat center 0;
     background-size: contain;
     color: #ffffff
 }

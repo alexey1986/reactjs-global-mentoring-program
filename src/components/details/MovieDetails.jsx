@@ -1,24 +1,24 @@
 import React, { useEffect } from 'react';
 import { PropTypes } from 'prop-types';
 import { Container, Row, Col } from 'react-bootstrap';
-import Header from 'components/header';
-import SearchButton from 'components/searchBtn';
-import Genres from 'components/genres';
-import Sort from 'components/sort';
-import Counter from 'components/counter';
-import MoviesList from 'components/list';
-import Loader from 'components/loader';
-import Footer from 'components/footer';
+import Header from '@components/header';
+import SearchButton from '@components/searchBtn';
+import Genres from '@components/genres';
+import Sort from '@components/sort';
+import Counter from '@components/counter';
+import MoviesList from '@components/list';
+import Loader from '@components/loader';
+import Footer from '@components/footer';
 import { useDispatch, useSelector } from 'react-redux';
-import { getMovie } from 'service/index.js';
+import { getMovie } from '@service/index.js';
 import styles from './styles.module.css';
-import imageNotFound from 'assets/images/notfound.png'
+import imageNotFound from '@assets/images/notfound.png'
 import { text } from '../../data.js';
 
 const MovieDetails = ({ location, match }) => {
     const getFullYear = date => new Date(date).getFullYear();
     const arrayToString = arr => arr.join(', ');
-    
+
     const isLoading = useSelector(state => state.fetchReducer.isLoading);
     const selectedMovie = useSelector(state => state.fetchReducer.selectedMovie);
 
@@ -32,14 +32,14 @@ const MovieDetails = ({ location, match }) => {
     useEffect(() => {
         getMovie(dispatch, match.params.id);
         window.scrollTo(0, 0);
-    }, [ location.pathname ]);
+    }, [location.pathname]);
 
     return (
         <>
             <Container>
-                { selectedMovie &&
+                {selectedMovie &&
                     <div>
-                        <Header>
+                        <Header isSearchable={false}>
                             <SearchButton />
                         </Header>
 
@@ -83,7 +83,7 @@ const MovieDetails = ({ location, match }) => {
 
             <Footer />
 
-            { isLoading && <Loader />}
+            {isLoading && <Loader />}
         </>
     )
 }

@@ -4,10 +4,10 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { genresOptions, labels, text } from '../../data.js';
 import { useDispatch } from 'react-redux';
-import { createMovie } from 'service/index.js';
+import { createMovie } from '@service/index.js';
 import { Formik } from "formik";
 import * as yup from "yup";
-import { FormTextField, FormSelectField } from "components/form-field";
+import { FormTextField, FormSelectField } from "@components/form-field";
 
 const AddMovie = ({ handleClose }) => {
     const { titleLabel, releaseDateLabel, selectDateLabel, movieUrlLabel, genreLabel, selectGenreLabel, overviewLabel, runtimeLabel, hereLabel } = labels;

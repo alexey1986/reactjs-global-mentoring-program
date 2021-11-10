@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useDispatch, useSelector } from 'react-redux';
 import { sortOptions, text } from '../../data.js';
-import { setParamsAction } from 'actions/actions';
+import { setParamsAction } from '@actions/actions';
 
 const Sort = () => {
     const { sortByTxt } = text;

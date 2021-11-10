@@ -1,5 +1,5 @@
-import { fetchMoviesListApi, fetchMovieApi, deleteMovieApi, createMovieApi, editMovieApi } from 'src/api/index.js';
-import { fetchDataStart, fetchMovieListSuccess, fetchMovieItemSuccess, fetchDataSuccess, fetchDataFailure } from 'actions/actions';
+import { fetchMoviesListApi, fetchMovieApi, deleteMovieApi, createMovieApi, editMovieApi } from '@src/api/index.js';
+import { fetchDataStart, fetchMovieListSuccess, fetchMovieItemSuccess, fetchDataSuccess, fetchDataFailure } from '@actions/actions';
 
 export const getMoviesList = (dispatch, params) => {
     dispatch(fetchDataStart());
