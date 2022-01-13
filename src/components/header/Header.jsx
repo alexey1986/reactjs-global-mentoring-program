@@ -1,5 +1,6 @@
 import React, { useCallback } from "react";
-import { useHistory, useParams } from "react-router-dom";
+// import { useHistory, useParams } from "react-router-dom";
+import { useRouter } from 'next/router'
 import { PropTypes } from 'prop-types';
 import parse from 'html-react-parser';
 import Search from '@components/search';
@@ -10,16 +11,18 @@ import styles from './styles.module.css';
 
 const Header = ({ isSearchable, children }) => {
     const logoTxt = '<strong>netflix</strong>roulette';
-    const history = useHistory();
-    const { query } = useParams();
+    // const history = useHistory();
+    const router = useRouter()
+    // const { query } = useParams();
+    const { pid } = router.query
 
     const handleChange = useCallback((e) => {
-        !e.target.value.length && history.push("/");
+        // !e.target.value.length && history.push("/");
     }, []);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        history.push(`/search/${e.target.elements.searchMovie.value}`);
+        // history.push(`/search/${e.target.elements.searchMovie.value}`);
     };
 
     return (

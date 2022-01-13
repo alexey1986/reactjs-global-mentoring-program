@@ -28,3 +28,4 @@ yarn-error.log*
 /babel.config.js
 /.vs
 /docs
+/.next
